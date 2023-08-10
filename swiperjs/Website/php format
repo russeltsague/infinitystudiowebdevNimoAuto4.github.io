@@ -1,0 +1,32 @@
+<?php
+    if(isset($_POST['num']))
+    {
+        $num=$_POST['input'].$_POST['num'];
+    }
+    else{
+        $num="";
+    }
+    if($_POST['input']=="+"){
+        $_SESSION['old']=$_POST['input'];
+    }
+    unset($_SESSION['input']);
+    if($_POST['equal']=="="){
+        floatval($_SESSION['old']+floatval($_POST['input']));
+    }
+    
+?>
+<?php
+$num1 = $_POST['value1'];
+$num2 = $_POST['value2'];
+$op = $_POST['op'];
+$ans = '';
+if($op == '+')
+{
+    $ans = $num1+$num2;
+}
+elseif($op == '-')
+{
+    $ans = $num1-$num2;
+}
+?>
+value="<?php echo $ans; ?>"
